@@ -1,2 +1,2 @@
 #!/bin/bash
-chown betty:holberton hello
+chown -R betty:holberton ./*
