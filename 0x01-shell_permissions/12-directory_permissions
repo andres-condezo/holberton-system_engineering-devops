@@ -1,0 +1,2 @@
+#!/bin/bash
+install -m 751 -d ./dir_holberton
