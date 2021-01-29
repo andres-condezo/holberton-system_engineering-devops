@@ -1,2 +1,2 @@
 #!/bin/bash
-find hello -user guillaume -exec chown -h betty {} \;
+chown --from=guillaume betty hello
