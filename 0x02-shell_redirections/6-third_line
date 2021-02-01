@@ -1,0 +1,2 @@
+#!/bin/bash
+cat prub | head -3 | tail -1
