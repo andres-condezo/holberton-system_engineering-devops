@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script that displays Holberton School 10 times.
 i="0"
-until [ $i -eq 9 ]
+until [ $i -eq 10 ]
 do
 	echo "Holberton School"
 	i=$((i+1))
