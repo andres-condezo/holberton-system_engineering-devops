@@ -1,4 +1,4 @@
-# 0x04. 0x05. Processes and signals
+# 0x05. Processes and signals
 
 This project it's about
 
