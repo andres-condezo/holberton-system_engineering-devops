@@ -2,7 +2,7 @@
 
 This project it's about
 
-###OSI Model
+### OSI Model
 
 - What it is
 - How many layers it has
