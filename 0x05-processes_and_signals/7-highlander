@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Write a Bash script that displays the string
+
+trap "echo \"I am invincible!!!\"" SIGTERM
+
+TRUE=1
+while [ "$TRUE" -eq 1 ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
