@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script is a solution for FizzBuzz
+
+for num in {1..100}
+do
+	if [ $((num % 3)) = 0 ]
+	then
+		echo -n "Fizz"
+	fi
+
+	if [ $((num % 5)) = 0 ]
+	then
+		echo -n "Buzz"
+	fi
+
+	if [ $((num % 3)) != 0 ] && [ $((num % 5)) != 0 ]
+	then
+		echo -n "$num"
+	fi
+
+	echo
+
+done
