@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20
+
+file_list=$(ls)
+for file in $file_list
+do
+	echo "$file" | cut -d'-' -f2
+done
