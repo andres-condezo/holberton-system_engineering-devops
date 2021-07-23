@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script reads the /etc/psswd file line by line
+
+filename="/etc/passwd"
+while IFS= read -r line
+do
+	echo "$line" | cut -d':' -f1,3,6
+done < "$filename"
