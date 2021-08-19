@@ -15,7 +15,7 @@ server {
         index index.html index.htm index.nginx-debian.html;
         server_name _;
 				location /redirect_me {
-							rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 redirect;
+                return 301 https://$host$request_uri;
 				}
         location / {
                 try_files $uri $uri/ =404;
