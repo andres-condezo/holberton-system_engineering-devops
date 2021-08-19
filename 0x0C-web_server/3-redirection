@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# A script to configure Nginx server so that /redirect_me is redirecting to another page.
+
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+service nginx start
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+
+echo "
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+				location /redirect_me {
+							rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 redirect;
+				}
+        location / {
+                try_files $uri $uri/ =404;
+        }
+"
+service nginx restart
