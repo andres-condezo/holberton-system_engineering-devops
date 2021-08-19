@@ -7,8 +7,7 @@ ufw allow 'Nginx HTTP'
 service nginx start
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
-echo "
-server {
+echo "server {
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/html;
