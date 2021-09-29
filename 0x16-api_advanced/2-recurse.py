@@ -12,10 +12,10 @@ def recurse(subreddit, hot_list=[], new_after=''):
     """
 
     res = requests.get("https://www.reddit.com/r/{}/hot.json"
-                            .format(subreddit),
-                            headers={'User-Agent': 'Custom'},
-                            params={'after': new_after},
-                            allow_redirects=False)
+                       .format(subreddit),
+                       headers={'User-Agent': 'Custom'},
+                       params={'after': new_after},
+                       allow_redirects=False)
 
     if res.status_code != 200:
         return None
