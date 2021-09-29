@@ -11,27 +11,29 @@ def recurse(subreddit, hot_list=[], new_after=''):
     and returns a list containing the titles of all hot articles
     """
 
-    response = requests.get("https://www.reddit.com/r/{}/hot.json"
+    res = requests.get("https://www.reddit.com/r/{}/hot.json"
                             .format(subreddit),
                             headers={'User-Agent': 'Custom'},
                             params={'after': new_after},
                             allow_redirects=False)
 
-    response = response.json().get('data')
-    #response = response.json().get('data', None)
-
-    if response is None:
+    if res.status_code != 200:
         return None
 
-    response = response.get('children')
-    #response = response.get('children', [])
+    try:
+        response = res.json().get('data', None)
 
-    for post in response:
-        hot_list.append(post.get('data').get('title'))
-        #hot_list.append(post.get('data', None).get('title', ''))
+        if response is None:
+            return None
+    except ValueError:
+        return None
 
-    new_after = response.get('data').get('after')
-    #new_after = response.get('data', {}).get('after', None)
+    children = response.get('children', [])
+
+    for post in children:
+        hot_list.append(post.get('data', None).get('title', ''))
+
+    new_after = response.get('after', None)
 
     if new_after is None:
         return hot_list
