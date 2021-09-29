@@ -17,17 +17,21 @@ def recurse(subreddit, hot_list=[], new_after=''):
                             params={'after': new_after},
                             allow_redirects=False)
 
-    response = response.json().get('data', None)
+    response = response.json().get('data')
+    #response = response.json().get('data', None)
 
     if response is None:
         return None
 
-    response = response.get('children', [])
+    response = response.get('children')
+    #response = response.get('children', [])
 
     for post in response:
-        hot_list.append(post.get('data', None).get('title', ''))
+        hot_list.append(post.get('data').get('title'))
+        #hot_list.append(post.get('data', None).get('title', ''))
 
-    new_after = response.get('data', {}).get('after', None)
+    new_after = response.get('data').get('after')
+    #new_after = response.get('data', {}).get('after', None)
 
     if new_after is None:
         return hot_list
