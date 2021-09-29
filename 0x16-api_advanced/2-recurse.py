@@ -12,10 +12,10 @@ and returns a list containing the titles of all hot articles
     """
 
     response = requests.get("https://www.reddit.com/r/{}/hot.json"
-                       .format(subreddit),
-                       headers={'User-Agent': 'Custom'},
-                       params={'after': 'new_after'},
-                       allow_redirects=False)
+                            .format(subreddit),
+                            headers={'User-Agent': 'Custom'},
+                            params={'after': 'new_after'},
+                            allow_redirects=False)
 
     response = response.json().get('data', None)
 
