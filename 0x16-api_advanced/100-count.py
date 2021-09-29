@@ -13,6 +13,7 @@ def count_words(subreddit, word_list, new_after='',
     sorted count of given keywords
     """
 
+    word_list = map(lambda x: x.lower(), word_list)
     word_list = list(dict.fromkeys(word_list))
 
     if init == 'True':
