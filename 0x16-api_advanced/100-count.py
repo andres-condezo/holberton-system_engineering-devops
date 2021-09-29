@@ -11,8 +11,10 @@ def count_words(subreddit, word_list, new_after='',
     A recursive function that queries the Reddit API,
     parses the title of all hot articles, and prints a
     sorted count of given keywords
-
     """
+
+    word_list = list(dict.fromkeys(word_list))
+
     if init == 'True':
         for key_word in word_list:
             words_dict[key_word] = 0
