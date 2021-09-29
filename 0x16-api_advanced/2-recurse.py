@@ -27,7 +27,7 @@ def recurse(subreddit, hot_list=[], new_after=''):
     for post in response:
         hot_list.append(post.get('data', None).get('title', ''))
 
-    new_after = response.get('data', {}).get('after', '')
+    new_after = response.get('data', {}).get('after', None)
 
     if new_after is None:
         return hot_list
