@@ -42,9 +42,7 @@ def count_words(subreddit, word_list, new_after='',
                 if key_word == word:
                     words_dict[key_word] = words_dict.get(key_word, 0) + 1
 
-
     new_after = response.get('after', None)
-
 
     if new_after is None:
         sorted_dict = sorted(words_dict.items(),
