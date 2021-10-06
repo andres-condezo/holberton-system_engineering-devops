@@ -20,8 +20,8 @@ server {
                 proxy_pass http://localhost:5000/airbnb-onepage;
         }
 
-        location /number_odd_or_even/ {
-                proxy_pass http://localhost:5001/airbnb-dynamic/number_odd_or_even/;
+        location /airbnb-dynamic/number_odd_or_even/ {
+                proxy_pass http://localhost:5001/number_odd_or_even/;
         }
 
         error_page 404 /404.html;
