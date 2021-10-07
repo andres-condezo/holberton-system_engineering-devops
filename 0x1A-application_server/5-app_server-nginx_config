@@ -29,6 +29,10 @@ server {
                 proxy_pass http://localhost:5002/api;
         }
 
+        location / {
+                proxy_pass http://localhost:5003/2-hbnb;
+        }
 
-        error_page 404 /404.html;
-}
+        location /static {
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
+        }
