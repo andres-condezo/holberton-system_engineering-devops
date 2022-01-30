@@ -1,12 +1,14 @@
 # holberton-system_engineering-devops
 
-This is a repositorie for the engineering devop learning.
+This is a repository for the engineering devop learning.
+
+---
 
 This section covers the following topics:
 
-### 0x00-shell_basics
+[0x00-shell_basics](https://github.com/andres-condezo/holberton-system_engineering-devops/tree/main/0x00-shell_basics)
 
-### 0x01-shell_permissions
+[0x01-shell_permissions](https://github.com/andres-condezo/holberton-system_engineering-devops/tree/main/0x01-shell_permissions)
 
 ### 0x02-shell_redirections
 
